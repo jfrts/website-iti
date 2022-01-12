@@ -1,0 +1,220 @@
+$container-xl: 1440px;
+$container-lg: 1140px;
+$container-md: 960px;
+$container-sm: 540px;
+
+@mixin responsive($device) {
+  @if $device == xl {
+    @media screen and (min-width: $container-xl) {
+      @content;
+    }
+  }
+
+  @if $device == lg {
+    @media screen and (max-width: $container-xl) and (min-width: $container-lg) {
+      @content;
+    }
+  }
+
+  @if $device == md {
+    @media screen and (max-width: $container-lg) and (min-width: $container-md) {
+      @content;
+    }
+  }
+
+  @if $device == sm {
+    @media screen and (max-width: $container-md) {
+      @content;
+    }
+  }
+
+  @if $device == xs {
+    @media screen and (max-width: $container-sm) {
+      @content;
+    }
+  }
+}
+
+.container {
+  max-width: $container-xl;
+  margin: 0 auto;
+  padding: 96px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  overflow: hidden;
+
+  @include responsive(sm) {
+    flex-direction: column;
+    padding: 32px 24px;
+  }
+}
+
+.flex-start {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: flex-center;
+  align-items: center;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-item-1 {
+  flex: 1 1 360px;
+}
+
+.flex-item-2 {
+  flex: 2 1 360px;
+}
+
+.flex-item-3 {
+  flex: 3 1 360px;
+}
+
+.flex-item-4 {
+  flex: 4 1 360px;
+}
+
+.flex-item-5 {
+  flex: 5 1 360px;
+}
+
+.flex-item-auto {
+  flex: 1 1 auto;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.w-75 {
+  width: 75%;
+}
+
+.w-50 {
+  width: 50%;
+}
+
+.hidden {
+  overflow: hidden;
+}
+
+.hero {
+  height: 90vh;
+  @include responsive(sm) {
+    height: auto;
+    padding-top: 192px;
+  }
+
+  h1 {
+    font-family: 'Hind';
+    font-size: 76px;
+    font-weight: 600;
+    line-height: 1;
+    background: $gradient-main;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 24px;
+    margin-top: 48px;
+  }
+
+  p {
+    color: $light;
+    font-size: 24px;
+    line-height: 1;
+    margin-bottom: 48px;
+  }
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+
+  .btn-hero {
+    background: $gradient-main;
+    border-radius: 8px;
+    padding: 12px 72px;
+    line-height: 1 !important; 
+    color: $light;
+    transition: .3s ease;
+    font-size: 20px;
+
+    &:hover {
+      background: linear-gradient(135.79deg,#FD4D7C .6%, #E96401 99.22%);
+      transform: scale(1.025);
+      box-shadow: $shadow-color;
+    }
+  }
+
+  svg {
+    width: 75%;
+    transition: .3s ease;
+    &:hover {
+      transform: scale(1.08);
+    }
+  }
+}
+
+.bg-hero {
+ width: 100%;
+ height: 100%;
+ overflow: hidden;
+ position: absolute;
+ z-index: -1;
+
+ @include responsive(sm) {
+  height: 100%;
+ }
+
+ svg {
+   @include responsive(sm) {
+    //  width: 250%;
+   }
+ }
+}
+
+.svg-bg-hero {
+  width: 120%;
+
+  @include responsive(sm) {
+    width: 250%;
+  }
+}
+
+.hero-arrow-down {
+  display: block;
+  width: 100px;
+  position: absolute;
+  bottom: 5%;
+  animation: arrow-down 2s ease infinite alternate;
+  overflow: hidden;
+}
+
+@keyframes arrow-down {
+  0% {
+    transform: translateY(0) scale(.8);
+    overflow: hidden;
+  }
+  100% {
+    transform: translateY(15px) scale(.9);
+    overflow: hidden;
+  }
+}

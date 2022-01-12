@@ -1,0 +1,25 @@
+a {
+  text-decoration: none;
+  transition: .3s ease;
+  display: inline-block;
+
+  &:hover {
+    opacity: .95;
+  }
+}
+
+.btn {
+  background: $gradient-main;
+  border-radius: 8px;
+  padding: 8px 32px;
+  color: $light;
+  transition: .3s ease;
+
+  @include c3;
+
+  &:hover {
+    background: linear-gradient(135.79deg,#FD4D7C .6%, #E96401 99.22%);
+    transform: scale(1.025);
+    box-shadow: $shadow-color;
+  }
+}

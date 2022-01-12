@@ -1,0 +1,64 @@
+@mixin t1() {
+  font-family: 'Hind', sans-serif;
+  font-size: 6rem;
+  line-height: 100%;
+  font-weight: 600;
+  letter-spacing: -1.5%;
+}
+
+@mixin t2() {
+  font-family: 'Hind', sans-serif;
+  font-size: 3.75rem;
+  line-height: 100%;
+  font-weight: 600;
+  letter-spacing: -0.5%;
+}
+
+@mixin t3() {
+  font-family: 'Hind', sans-serif;
+  font-size: 3rem;
+  line-height: 100%;
+  font-weight: 600;
+}
+
+@mixin c1() {
+  font-family: 'Hind', sans-serif;
+  font-size: 1.5rem;
+  line-height: 133.333%;
+  font-weight: 400;
+}
+
+@mixin c2() {
+  font-family: 'Hind', sans-serif;
+  font-size: 1.5rem;
+  line-height: 133.333%;
+  font-weight: 600;
+}
+
+@mixin c3() {
+  font-family: 'Hind', sans-serif;
+  font-size: 1rem;
+  line-height: 150%;
+  font-weight: 400;
+}
+
+@mixin c4() {
+  font-family: 'Hind', sans-serif;
+  font-size: 1rem;
+  line-height: 150%;
+  font-weight: 600;
+}
+
+@mixin c3() {
+  font-family: 'Hind', sans-serif;
+  font-size: 0.875rem;
+  line-height: 150%;
+  font-weight: 400;
+}
+
+@mixin c4() {
+  font-family: 'Hind', sans-serif;
+  font-size: 0.875rem;
+  line-height: 150%;
+  font-weight: 600;
+}

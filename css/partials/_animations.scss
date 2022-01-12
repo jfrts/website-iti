@@ -1,0 +1,132 @@
+$width-card: 340px;
+$height-card: .64 * $width-card;
+
+.div-card {
+  perspective: 1200px;
+  position: relative;
+  padding: 96px;
+  display: flex;
+  justify-content: center;
+
+  @include responsive(sm) {
+    width: 100%;
+  }
+}
+
+.card {
+  width: $width-card * 1.15;
+  height: $height-card * 1.15;
+  border-radius: 12px;
+  transform-origin: center center;
+  transform-style: preserve-3d;
+  animation: 
+    flip-card 12s linear infinite alternate,
+    change-bg-card 12s linear infinite alternate;
+}
+
+
+@keyframes flip-card {
+  0% {
+    transform: rotateY(-10deg) rotateX(10deg) rotateX(-15deg);
+  }
+  40% {
+    transform: rotateY(0deg) rotateX(20deg);
+  }
+  60% {
+    transform: rotateY(180deg) rotateX(20deg);
+  }
+  100% {
+    transform: rotateY(190deg) rotateX(10deg) rotateX(15deg);
+  }
+}
+
+@keyframes change-bg-card {
+  0%,50% {
+    background-image: url("../../svg/iti.svg");
+    background-size: cover;
+  }
+  51%,100% {
+    background-image: url("../../svg/iti-verse.svg");
+    background-size: cover;
+  }
+}
+
+
+.icon-card-hero {
+  position: absolute;
+  top: -5%;
+  left: 30%;
+  z-index: 99;
+  animation: icons-hero-1 7s ease .5s infinite alternate;
+}
+
+.icon-wireless-hero {
+  position: absolute;
+  top: 30%;
+  left: 0%;
+  z-index: 99;
+  animation: icons-hero-2 7s ease 1s infinite alternate;
+  @include responsive(sm) {
+    left: -10%;
+  }
+}
+
+.icon-phone-hero {
+  position: absolute;
+  top: 70%;
+  left: 45%;
+  z-index: 99;
+  animation: icons-hero-3 7s ease 2.5s infinite alternate;
+}
+
+@keyframes icons-hero-1 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-10px, 40px, 0);
+  }
+}
+
+@keyframes icons-hero-2 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(20px, -20px, 0);
+  }
+}
+
+@keyframes icons-hero-3 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(10px, -20px, 0);
+  }
+}
+
+.card1 {
+  animation: bg-hero-rect 3s ease .3s infinite alternate;
+}
+
+.card2 {
+  animation: bg-hero-rect 3s ease .9s infinite alternate;
+}
+
+.card3 {
+  animation: bg-hero-rect 3s ease 2s infinite alternate;
+}
+
+.card4 {
+  animation: bg-hero-rect 3s ease 3.5s infinite alternate;
+}
+
+@keyframes bg-hero-rect {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(30px);
+  }
+}
