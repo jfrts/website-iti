@@ -193,15 +193,37 @@ $height-card: .64 * $width-card;
 
 .people-1 {
   height: 620px;
-  width: 440px;
+  width: 100%;
+  max-width: 100%;
+  padding: 48px;
   background-size: cover;
   @include bg-img-transition("../../img/people2.jpg", "../../img/people3.jpg", 80px, 0s);
+
+  @include responsive(md) {
+    height: 400px
+  }
+
+  @include responsive(sm) {
+    height: 420px !important;
+    width: 300px !important;
+    position: absolute;
+    top: -350px;
+    left: 200px;
+  }
+
+  @include responsive(xs) {
+    display: none;
+  }
 }
 
 .people-box {
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  @include responsive(sm) {
+    display: none;
+  }
 }
 
 .people-2 {
@@ -209,6 +231,14 @@ $height-card: .64 * $width-card;
   width: 100%;
   background-size: cover;
   @include bg-img-transition("../../img/people1.jpg", "../../img/people5.jpg", 80px, 4s);
+
+  @include responsive(md) {
+    height: 360px
+  }
+
+  @include responsive(sm) {
+    display: none;
+  }
 }
 
 .people-3 {
@@ -216,4 +246,18 @@ $height-card: .64 * $width-card;
   width: 100%;
   background-size: cover;
   @include bg-img-transition("../../img/people4.jpg", "../../img/people6.jpg", 80px, 9s);
+
+  @include responsive(sm) {
+    display: none;
+  }
+}
+
+.people-box-1 {
+  position: relative;
+  height: 420px !important;
+  width: 300px !important;
+
+  @include responsive(xs) {
+    display: none;
+  }
 }

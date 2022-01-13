@@ -118,6 +118,7 @@ $container-sm: 540px;
 .hero {
   height: 90vh;
   background-color: $dark;
+  position: relative;
   @include responsive(sm) {
     height: auto;
     padding-top: 192px;
@@ -237,9 +238,19 @@ $container-sm: 540px;
 }
 
 // people
+.infos {
+  @include responsive(lg) {
+    flex-basis: 570px;
+  }
+
+  @include responsive(md) {
+    flex-basis: 570px;
+  }
+}
+
 .section-people {
-  padding-top: 128px;
-  padding-bottom: 128px;
+  padding-top: 96px;
+  padding-bottom: 96px;
 }
 
 .subtitle {
