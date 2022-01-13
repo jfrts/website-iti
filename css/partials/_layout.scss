@@ -117,6 +117,7 @@ $container-sm: 540px;
 
 .hero {
   height: 90vh;
+  background-color: $dark;
   @include responsive(sm) {
     height: auto;
     padding-top: 192px;
@@ -232,5 +233,104 @@ $container-sm: 540px;
   100% {
     transform: translateY(15px) scale(.9);
     overflow: hidden;
+  }
+}
+
+// people
+.section-people {
+  padding-top: 128px;
+  padding-bottom: 128px;
+}
+
+.subtitle {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 16px;
+  font-family: 'Hind';
+  background: $gradient-main;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: -8px;
+}
+
+.title {
+  color: $dark;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.paragraph {
+  color: $gray-5;
+  font-size: 16px;
+  margin-bottom: 32px;
+  padding-right: 16px;
+}
+
+.list-item {
+  list-style: none;
+  position: relative;
+  padding: 8px 8px 8px 72px;
+  margin-bottom: 16px;
+
+  strong {
+    font-size: 16px;
+    margin-bottom: -4px;
+    display: block;
+  }
+
+  p {
+    color: $gray-5;
+    font-size: 14px;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 10px;
+    border-radius: 40px;
+    top: 11px;
+    height: 36px;
+    width: 36px;
+    // background: red;
+    background: url('../../svg/check-icon.svg');
+    background-size: cover;
+    box-shadow: $shadow-black;
+  }
+}
+
+.list-link {
+  display: flex;
+  margin-top: 32px;
+
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+
+  svg {
+    width: 15px;
+    transition: .3s ease;
+  }
+
+  span {
+    background: $gradient-main;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 1;
+    transition: .3s ease;
+  }
+
+  &:hover {
+    svg {
+      transform: translateX(3px);
+    }
+
+    span {
+      filter: brightness(1.3);
+    }
   }
 }

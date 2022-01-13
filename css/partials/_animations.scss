@@ -1,6 +1,42 @@
 $width-card: 340px;
 $height-card: .64 * $width-card;
 
+@mixin bg-img-transition($bg1, $bg2, $border-r, $delay){  
+  position: relative;  
+  z-index: 100;
+  &:before, &:after {
+    background-size: cover;  
+    border-radius: $border-r;
+    content: '';    
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0; left: 0;    
+    width: 100%;    
+  }
+  &:before {    
+    z-index: -101;
+    background-image: url("#{$bg1}");
+    background-position: center;  
+  }
+  &:after {    
+    z-index: -100;
+    opacity: 0;
+    background-image: url("#{$bg2}");  
+    background-position: center;  
+    animation: changebg 20s ease $delay infinite alternate-reverse;
+  }
+
+  @keyframes changebg {
+    0%, 40% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+}
+
 .div-card {
   perspective: 1200px;
   position: relative;
@@ -11,6 +47,7 @@ $height-card: .64 * $width-card;
   @include responsive(sm) {
     width: 100%;
     padding: 0;
+    margin-top: 96px;
   }
 }
 
@@ -152,4 +189,31 @@ $height-card: .64 * $width-card;
   100% {
     transform: translateY(30px);
   }
+}
+
+.people-1 {
+  height: 620px;
+  width: 440px;
+  background-size: cover;
+  @include bg-img-transition("../../img/people2.jpg", "../../img/people3.jpg", 80px, 0s);
+}
+
+.people-box {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.people-2 {
+  height: 460px;
+  width: 100%;
+  background-size: cover;
+  @include bg-img-transition("../../img/people1.jpg", "../../img/people5.jpg", 80px, 4s);
+}
+
+.people-3 {
+  height: 340px;
+  width: 100%;
+  background-size: cover;
+  @include bg-img-transition("../../img/people4.jpg", "../../img/people6.jpg", 80px, 9s);
 }
