@@ -10,6 +10,7 @@ $height-card: .64 * $width-card;
 
   @include responsive(sm) {
     width: 100%;
+    padding: 0;
   }
 }
 
@@ -41,13 +42,15 @@ $height-card: .64 * $width-card;
 }
 
 @keyframes change-bg-card {
-  0%,50% {
+  0%,49.8% {
     background-image: url("../../svg/iti.svg");
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
   }
-  51%,100% {
+  50%,100% {
     background-image: url("../../svg/iti-verse.svg");
-    background-size: cover;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 }
 
@@ -58,6 +61,16 @@ $height-card: .64 * $width-card;
   left: 30%;
   z-index: 99;
   animation: icons-hero-1 7s ease .5s infinite alternate;
+
+  @include responsive(sm) {
+    top: -35%;
+    left: 60%;
+  }
+
+  @include responsive(xs) {
+    top: -30%;
+    left: 40%;
+  }
 }
 
 .icon-wireless-hero {
@@ -69,6 +82,11 @@ $height-card: .64 * $width-card;
   @include responsive(sm) {
     left: -10%;
   }
+
+  @include responsive(xs) {
+    top: -20%;
+    left: -35%;
+  }
 }
 
 .icon-phone-hero {
@@ -77,6 +95,11 @@ $height-card: .64 * $width-card;
   left: 45%;
   z-index: 99;
   animation: icons-hero-3 7s ease 2.5s infinite alternate;
+
+  @include responsive(xs) {
+    top: 50%;
+    left: 15%;
+  }
 }
 
 @keyframes icons-hero-1 {
