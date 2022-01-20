@@ -13,6 +13,7 @@
 
   <link rel="shortcut icon" href="./img/favicon.png">
   <link rel="stylesheet" href="./css/style.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
   <script src="./js/svg-inject.min.js"></script>
 </head>
 
@@ -178,7 +179,107 @@
     </div>
   </section>
 
+  <section id="best" class="container best">
+    <div class="flex-item-auto">
+      <h5>O melhor</h5>
+      <h3>Por que o iti?</h3>
+    </div>
+    <div class="best-item flex-item-auto">
+      <img src="./svg/icon-box-usd.svg" alt="Seu dinheiro rende" class="best-icon" onload="SVGInject(this)">
+      <p>Conta rende mais que a poupança.</p>
+    </div>
+    <div class="best-item flex-item-auto">
+      <img src="./svg/icon-box-transfer.svg" alt="Transferências ilimitadas" class="best-icon" onload="SVGInject(this)">
+      <p>Transferências e TEDs ilimitadas.</p>
+    </div>
+    <div class="best-item flex-item-auto">
+      <img src="./svg/icon-box-credcard.svg" alt="Conta e cartão 100% gratuitos" class="best-icon"
+        onload="SVGInject(this)">
+      <p>Conta e cartão 100% gratuitos.</p>
+    </div>
+    <div class="best-item flex-item-auto">
+      <img src="./svg/icon-box-cart.svg" alt="Seu dinheiro rende" class="best-icon" onload="SVGInject(this)">
+      <p>Fazer compras e assinaturas online usando seu saldo, com o cartão da conta.</p>
+    </div>
+  </section>
+
+  <section class="container box flex-column">
+    <h5 class="subtitle">Depoimentos</h5>
+    <h2 class="title">Todos amam o iti</h2>
+  </section>
+
+  <section class="swiper-box">
+
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide">
+          <div class="photo-profile peop1"></div>
+          <h4>Jorge Silva</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, cupiditate? Impedit dolore debitis
+            nesciunt
+          </p>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="photo-profile peop2"></div>
+          <h4>Jorge Silva</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, cupiditate? Impedit dolore debitis
+            nesciunt
+          </p>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="photo-profile peop3"></div>
+          <h4>Jorge Silva</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, cupiditate? Impedit dolore debitis
+            nesciunt
+          </p>
+        </div>
+
+        <div class="swiper-slide">
+          <div class="photo-profile peop4"></div>
+          <h4>Jorge Silva</h4>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis, cupiditate? Impedit dolore debitis
+            nesciunt
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="swiper-prev"></div>
+    <div class="swiper-next"></div>
+
+  </section>
+
   <script src="js/app.js"></script>
+  <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      // Optional parameters
+      slidesPerView: 'auto',
+      spaceBetween: 36,
+      grabCursor: true,
+
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        type: 'progressbar',
+      },
+
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-next',
+        prevEl: '.swiper-prev',
+      },
+    });
+  </script>
 </body>
 
 </html>
